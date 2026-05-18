@@ -56,7 +56,7 @@ export default function GraphicsCategoryPage({ category }: GraphicsCategoryPageP
                 transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1], delay: (index % 4) * 0.05 }}
                 whileHover={{ y: -8, scale: 1.01 }}
               >
-                <img src={src} alt={`${category.title} ${index + 1}`} loading="lazy" />
+                <img src={src} alt={`${category.title} ${index + 1}`} loading="lazy" width="800" height="600" decoding="async" />
                 <figcaption>
                   <span>{String(index + 1).padStart(2, "0")}</span>
                   <span>{category.title}</span>

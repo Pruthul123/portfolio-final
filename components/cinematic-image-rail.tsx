@@ -17,8 +17,8 @@ export default function CinematicImageRail({ images, title, reverse = false }: C
       <div className="cinematic-rail__viewport">
         <div className="cinematic-rail__track">
           {railImages.map((src, index) => (
-            <figure key={`${src}-${index}`} className="cinematic-rail__frame">
-              <img src={src} alt={title} loading="lazy" />
+              <figure key={`${src}-${index}`} className="cinematic-rail__frame">
+              <img src={src} alt={title} loading="lazy" width="1200" height="800" decoding="async" />
             </figure>
           ))}
         </div>
