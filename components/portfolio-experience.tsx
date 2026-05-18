@@ -243,8 +243,10 @@ export default function PortfolioExperience({ showcaseCategories }: { showcaseCa
   }, []);
 
   return (
-    <main ref={rootRef} className="portfolio-shell">
-      <header className="topbar">
+    <>
+      <a href="#main-content" className="skip-to-main-link">Skip to main content</a>
+      <main ref={rootRef} className="portfolio-shell" id="main-content">
+      <header className="topbar" role="banner">
         <p>Patel Pruthul </p>
         <p>Graphic Designer / Brand Designer / Creative Director</p>
       </header>
@@ -437,5 +439,6 @@ export default function PortfolioExperience({ showcaseCategories }: { showcaseCa
         </div>
       </footer>
     </main>
+    </>
   );
 }

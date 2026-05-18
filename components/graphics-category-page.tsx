@@ -10,16 +10,36 @@ type GraphicsCategoryPageProps = {
 };
 
 export default function GraphicsCategoryPage({ category }: GraphicsCategoryPageProps) {
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Portfolio",
+        "item": "https://pruthul123.github.io/portfolio-final"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": category.title,
+        "item": `https://pruthul123.github.io/portfolio-final/${category.slug}`
+      }
+    ]
+  };
+
   return (
     <main className="graphics-page">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <header className="graphics-page__topbar">
-        <Link href="/" className="graphics-page__backlink">
+        <Link href="/" className="graphics-page__backlink" aria-label="Return to portfolio home">
           Back to portfolio
         </Link>
-        <span>{category.title}</span>
+        <span aria-current="page">{category.title}</span>
       </header>
 
-      <section className="graphics-page__hero">
+      <section className="graphics-page__hero" aria-label={`${category.title} showcase`}>
         <div className="graphics-page__hero-copy">
           <p className="eyebrow">{category.eyebrow}</p>
           <h1>{category.title}</h1>
